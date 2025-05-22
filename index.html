@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" class="!scroll-smooth">
 
 <head>
     <!-- <link rel="stylesheet" href="index.css"> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Barbershop - A melhor barbearia da região com cortes modernos e atendimento de qualidade" />
+    <meta name="keywords" content="barbearia, corte de cabelo, barba, barbeiro, style barbershop" />
+    <meta name="author" content="Barbershop" />
+    <meta property="og:title" content="Barbershop" />
+    <meta property="og:description" content="Venha para a melhor barbearia da região!">
+    <meta property="og:url" content="https://barbearia-site.vercel.app" />
+    <meta property="og:image" content="https://barbearia-site.vercel.app/assets/images/logoseo.webp" />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="/assets/images/logo.webp" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -13,6 +22,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="style.css">
 
 
     <script>
@@ -24,15 +34,13 @@
                     },
                     colors: {
                         default: "#161515",
-                    },
-
-                    animation: {
+                    },                    animation: {
                         "infinite-scroll": "infinite-scroll 25s linear infinite",
                     },
                     keyframes: {
                         "infinite-scroll": {
-                            from: { transform: "translateX(0)" },
-                            to: { transform: "translateX(-100%)" },
+                            "0%": { transform: "translateX(0)" },
+                            "100%": { transform: "translateX(-100%)" },
                         },
                     },
                 },
@@ -44,6 +52,7 @@
 </head>
 
 <body class="bg-black">
+    
     <div class="">
 
         <!-- TOLTIP COM WhatsApp -->
@@ -53,27 +62,28 @@
                 x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="tooltip-light"
                 role="tooltip"
                 class="z-10 inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm tooltip text-center">
-                Agende seu horário na <b /><br /> Barbershop
+                Agende seu horário na <b>Barbershop</b>
                 <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-            <img @mouseover="open = true" @mouseout="open = false" class="w-16 hover:scale-110 duration-300"
-                src="/assets/icons/zap.png" alt="icon do WhatsApp" data-aos="zoom-in-up" data-aos-delay="400">
+            <a href="https://wa.me/5582999774488?text=Ol%C3%A1%2C+quero+agendar+um+corte+para+%C3%A0s+14%3A00h+%21">
+                <img @mouseover="open = true" @mouseout="open = false" class="w-16 hover:scale-110 duration-300"
+                    src="/assets/icons/zap.png" alt="icon do WhatsApp" data-aos="zoom-in-up" data-aos-delay="400">
+
+            </a>
         </div>
 
 
         <!-- HEADER  -->
         <header
-            class="z-20 flex justify-around sm:justify-between  items-center container anim mx-auto absolute top-5 left-0 right-0">
-            <div class="flex justify-center items-center space-x-5 " data-aos="fade-down">
-                <a href=""><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/fc.svg"
-                        alt="" /></a>
-                <a href=""><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/insta.svg"
-                        alt="" /></a>
-                <a href=""><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/tiktok.svg"
-                        alt="" /></a>
+            class="z-20 flex justify-around sm:justify-between  items-center container anim mx-auto absolute top-5 left-0 right-0">            <div class="flex justify-center items-center space-x-5 " data-aos="fade-down">                <a href="https://facebook.com/barbershop"><img class="hover:scale-110 duration-300 w-8 md:w-full bg-no-repeat"
+                        src="/assets/icons/fc.svg" alt="Facebook" /></a>
+                <a href="https://instagram.com/barbershop"><img class="hover:scale-110 duration-300 w-8 md:w-full bg-no-repeat"
+                        src="/assets/icons/insta.svg" alt="Instagram" /></a>
+                <a href="https://tiktok.com/@barbershop"><img class="hover:scale-110 duration-300 w-8 md:w-full bg-no-repeat"
+                        src="/assets/icons/tiktok.svg" alt="TikTok" /></a>
             </div>
 
-            <a href="" data-aos="fade-down">
+            <a href="#location" data-aos="fade-down">
                 <div
                     class="py-[8px] px-3 sm:py-2 sm:px-5 rounded-full border-2 border-white justify-center items-center gap-3 inline-flex group hover:scale-[1.1] hover:bg-white duration-300">
                     <p class="text-white md:text-2xl font-medium group-hover:text-black">
@@ -93,11 +103,11 @@
             </a>
         </header>
 
-        <div class="h-screen grid grid-cols-[auto_0px_0px] sm:grid-cols-[auto_0px_auto]  xl:grid-cols-[auto_auto_auto] relative">
+        <div 
+            class="h-screen grid grid-cols-[auto_0px_0px] sm:grid-cols-[auto_0px_auto]  xl:grid-cols-[auto_auto_auto] relative">
             <div class="absolute inset-0 bg-gradient-to-t from-black z-10 flex items-center justify-center">
-                <div class="space-y-5 flex flex-col items-center">
-                    <div data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500">
-                        <img class="w-60" src="/assets/images/logo.png" alt="" />
+                <div class="space-y-5 flex flex-col items-center">                        <div data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500">
+                        <img class="w-60" src="/assets/images/logo.webp" alt="Logo da Barbershop" />
                     </div>
                     <div data-aos="fade-up" data-aos-delay="100">
                         <p class="text-center text-white text-base sm:text-3xl font-extrabold">
@@ -105,7 +115,7 @@
                         </p>
                     </div>
                     <div class="mx-auto" data-aos="fade-up" data-aos-delay="200">
-                        <a href="">
+                        <a href="https://wa.me/5582999774488?text=Ol%C3%A1%2C+quero+agendar+um+corte+para+%C3%A0s+14%3A00h+%21">
                             <div
                                 class="py-2 px-5 rounded-full border-2 border-white justify-center items-center gap-3 inline-flex group hover:bg-white duration-300 hover:scale-[1.1]">
                                 <p class="text-white text-2xl font-medium group-hover:text-black">
@@ -116,9 +126,9 @@
                     </div>
                 </div>
             </div>
-            <div class="relative bg-[url('/assets/images/1.png')] h-full w-full"></div>
-            <div class="relative bg-[url('/assets/images/2.png')] h-full w-full"></div>
-            <div class="relative bg-[url('/assets/images/3.png')] h-full w-full"></div>
+            <div class="relative bg-[url('/assets/images/1.webp')] h-full w-full"></div>
+            <div class="relative bg-[url('/assets/images/2.webp')] h-full w-full"></div>
+            <div class="relative bg-[url('/assets/images/3.webp')] h-full w-full"></div>
         </div>
 
         <!-- Bem vindo -->
@@ -147,6 +157,7 @@
                             sua confiança.
                         </p>
                     </div>
+                    
                     <!-- <div>
                         <a href="/" aria-label=""
                             class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
@@ -160,15 +171,13 @@
                     </div> -->
                 </div>
                 <div class="flex items-center justify-center -mx-4 lg:pl-8" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="flex flex-col items-end px-3">
-                        <img class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                            src="/assets/images/corte1.png" alt="" />
+                    <div class="flex flex-col items-end px-3">                        <img class="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+                            src="/assets/images/corte1.webp" alt="Exemplo de corte de cabelo masculino" />
                         <img class="object-cover w-20 h-20 rounded sm:h-32 shadow-lg xl:h-40 sm:w-32 xl:w-40"
-                            src="/assets/images/corte2.png" alt="" />
-                    </div>
-                    <div class="px-3">
+                            src="/assets/images/corte2.webp" alt="Exemplo de corte de cabelo masculino estilizado" />
+                    </div>                    <div class="px-3">
                         <img class="object-cover w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                            src="/assets/images/corte3.png" alt="" />
+                            src="/assets/images/corte3.webp" alt="Cliente recebendo serviço de barbearia" />
                     </div>
                 </div>
             </div>
@@ -202,35 +211,29 @@
 
 
                         <div data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
-                            class="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-2xl drop-shadow-2xl">
-                            <img src="/assets/images/c1.png"
-                                class="object-cover w-full hover:scale-110 duration-300  relative" alt="" />
-                            <div class="px-5 py-3 flex z-50 bg-white relative">
-                                <a href="/" aria-label=""
+                            class="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-2xl drop-shadow-2xl">                            <img src="/assets/images/c1.webp"
+                                class="object-cover w-full hover:scale-110 duration-300  relative" alt="Serviço de corte normal" />
+                            <div class="px-5 py-3 flex z-50 bg-white relative">                                <a href="#" aria-label="Serviço de corte normal"
                                     class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Corte
                                     normal</a>
                                 <p class="ml-auto px-3 py-2 bg-default text-white rounded-md">R$ 15,00</p>
                             </div>
                         </div>
 
-                        <div  data-aos="fade-up" data-aos-delay="200" data-aos-duration="2100"
-                            class="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-2xl drop-shadow-2xl">
-                            <img src="/assets/images/c2.png"
-                                class="object-cover w-full hover:scale-110 duration-300  relative" alt="" />
-                            <div class="px-5 py-3 flex z-50 bg-white relative">
-                                <a href="/" aria-label=""
+                        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="2100"
+                            class="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-2xl drop-shadow-2xl">                            <img src="/assets/images/c2.webp"
+                                class="object-cover w-full hover:scale-110 duration-300  relative" alt="Serviço de barba completa" />
+                            <div class="px-5 py-3 flex z-50 bg-white relative">                                <a href="#" aria-label="Serviço de barba completa"
                                     class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Barba
                                     completa</a>
                                 <p class="ml-auto px-3 py-2 bg-default text-white rounded-md">R$ 10,00</p>
                             </div>
                         </div>
 
-                        <div  data-aos="fade-up" data-aos-delay="250" data-aos-duration="3000"
-                            class="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-2xl drop-shadow-2xl">
-                            <img src="/assets/images/c3.png"
-                                class="object-cover w-full hover:scale-110 duration-300  relative" alt="" />
-                            <div class="px-5 py-3 flex z-50 bg-white relative">
-                                <a href="/" aria-label=""
+                        <div data-aos="fade-up" data-aos-delay="250" data-aos-duration="3000"
+                            class="overflow-hidden transition-shadow duration-300 bg-white rounded-lg shadow-2xl drop-shadow-2xl">                            <img src="/assets/images/c3.webp"
+                                class="object-cover w-full hover:scale-110 duration-300  relative" alt="Serviço de corte e barba" />
+                            <div class="px-5 py-3 flex z-50 bg-white relative">                                <a href="#" aria-label="Serviço de corte e barba"
                                     class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Corte
                                     e barba</a>
                                 <p class="ml-auto px-3 py-2 bg-default text-white rounded-md">R$ 25,00</p>
@@ -242,7 +245,7 @@
             </div>
         </div>
 
-        <di class="">
+        <div class="">
             <div class="bg-white py-10 h-full">
                 <h2
                     class="max-w-l mb-8 font-sans text-3xl font-bold tracking-tight text-black sm:text-4xl sm:leading-none text-center">
@@ -260,73 +263,66 @@
                 <ul x-ref="clientes"
                     class="flex items-center justify-center  md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                     <li>
-                        <img class="" src="/assets/clientes/1.png" alt="Facebook" />
+                        <img class="" src="/assets/clientes/1.webp" alt="Facebook" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/2.png" lt="Disney" />
+                        <img class="" src="/assets/clientes/2.webp" alt="Disney" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/3.png" lt="Airbnb" />
+                        <img class="" src="/assets/clientes/3.webp" alt="Airbnb" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/4.png" t="Apple" />
+                        <img class="" src="/assets/clientes/4.webp" alt="Apple" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/5.png" t="Spark" />
+                        <img class="" src="/assets/clientes/5.webp" alt="Spark" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/6.png" alt="Samsung" />
+                        <img class="" src="/assets/clientes/6.webp" alt="Samsung" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/7.png" t="Quora" />
+                        <img class="" src="/assets/clientes/7.webp" alt="Quora" />
+                    </li>                    <li>
+                        <img class="" src="/assets/clientes/8.webp" alt="Adfg" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/8.png"="Sass" />
+                        <img class="" src="/assets/clientes/9.webp" alt="Adfg" />
                     </li>
                     <li>
-                        <img class="" src="/assets/clientes/9.png"="Sass" />
-                    </li>
-                    <li>
-                        <img class="" src="/assets/clientes/10.png"="Sass" />
-                    </li>
-                </ul>
+                        <img class="" src="/assets/clientes/10.webp" alt="Adfg" />
+                    </li>                </ul>
             </div>
+        </div>
     </div>
 
     <!-- LOCALIZACAO -->
-    <div class="bg-white pt-20">
+    <div id="location" class="bg-white pt-20">
         <div class="flex flex-col mb-10 justify-center items-center">
             <h2
                 class="max-w-l mb-8 font-sans text-3xl font-bold tracking-tight text-black sm:text-4xl sm:leading-none text-center">
                 Transforme seu estilo, venha conhecer a Barbershop
                 <!-- <br class="hidden md:block" /> -->
                 <!-- <span class="inline-block text-deep-purple-accent-400">destination</span> -->
-            </h2>
-
-            <div class="bg-black rounded-full animate-bounce p-2">
-                <img class="rotate-90 " src="/assets/icons/arrow.svg" alt="" />
+            </h2>            <div class="bg-black rounded-full animate-bounce p-2">
+                <img class="rotate-90 " src="/assets/icons/arrow.svg" alt="Seta indicando a localização" />
             </div>
-        </div>
-
-        <iframe
+        </div>        <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251591.1252649044!2d-36.54836298317174!3d-9.84101598218441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7043384d9b20e0d%3A0x2feb5f76ceb4524a!2sEl%20Mago%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1704137276316!5m2!1spt-BR!2sbr"
             width="100%" height="500" style="border: 0" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+    
 
     <footer class="bg-black flex py-20">
-        <div class="mx-auto flex flex-col gap-10">
-            <div class="flex justify-center items-center space-x-5">
-                <a href=""><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/fc.svg"
-                        alt="" /></a>
-                <a href=""><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/insta.svg"
-                        alt="" /></a>
-                <a href=""><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/tiktok.svg"
-                        alt="" /></a>
-            </div>
-
-            <div class="mx-auto">
-                <img class="w-52" src="/assets/images/logo.png" alt="" />
+        <div class="mx-auto flex flex-col gap-10">            <div class="flex justify-center items-center space-x-5">
+                <a href="https://facebook.com/barbershop"><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/fc.svg"
+                        alt="Facebook" /></a>
+                <a href="https://instagram.com/barbershop"><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/insta.svg"
+                        alt="Instagram" /></a>
+                <a href="https://tiktok.com/@barbershop"><img class="hover:scale-110 duration-300 w-8 md:w-full" src="/assets/icons/tiktok.svg"
+                        alt="TikTok" /></a>
+            </div>            <div class="mx-auto">
+                <img class="w-52" src="/assets/images/logo.webp" alt="Logo da Barbershop" />
             </div>
 
             <div>
